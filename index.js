@@ -14,9 +14,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
-
 app.get('/predict', (req, res) => {
     res.render('predict.ejs');
+});
+app.get('/document', (req, res) => {
+    res.sendFile(path.join(__dirname, 'document.html'));
+});
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contact.html'));
 });
 app.post('/submit', (req, res) => {
     const inputData = Object.values(req.body).join(' ');

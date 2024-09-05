@@ -76,21 +76,16 @@
   }
   .get-started button:hover{
     background-color: white;
-    color: black;
+    color: #333;
     cursor: pointer;
-    border: 2px solid black;
+    border: 2px solid #333;
     transition: 0.3s;
   }
-  footer{
-    background-color:black;
-    color:white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    margin-top: 50px;
-}
-  footer a{
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #333;
     color: white;
-  }
+    font-size: 14px;
+}
