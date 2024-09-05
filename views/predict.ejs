@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Predictor</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="predict.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <h1>Body Fat Predictor</h1>
+        </div>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <% if (typeof prediction !== 'undefined' && prediction.trim() !== '') { %>
+            <div class="predictiondiv">
+                <h3>Predicted Body Fat Percentage:</h3>
+                <p><%= Number(prediction).toFixed(2) %>%</p>
+            </div>
+        <% } else { %>
+            <div class="formdiv">
+                <h3>Enter the following to predict your body fat percentage</h3>
+                <form action="/submit" id="form" method="POST">
+                    <label for="age">Age (In Years)</label>
+                    <input type="number" name="age" id="age" required>
+                
+                    <label for="weight">Weight (In Lbs)</label>
+                    <input type="number" name="weight" id="weight" required>
+                
+                    <label for="height">Height (In Inches)</label>
+                    <input type="number" name="height" id="height" required>
+                
+                    <label for="neck">Neck circumference (cm)</label>
+                    <input type="number" name="neck" id="neck" required>
+                
+                    <label for="chest">Chest circumference (cm)</label>
+                    <input type="number" name="chest" id="chest" required>
+                
+                    <label for="abdomen">Abdomen circumference (cm)</label>
+                    <input type="number" name="abdomen" id="abdomen" required>
+                
+                    <label for="hip">Hip circumference (cm)</label>
+                    <input type="number" name="hip" id="hip" required>
+                
+                    <label for="thigh">Thigh circumference (cm)</label>
+                    <input type="number" name="thigh" id="thigh" required>
+                
+                    <label for="knee">Knee circumference (cm)</label>
+                    <input type="number" name="knee" id="knee" required>
+                
+                    <label for="ankle">Ankle circumference (cm)</label>
+                    <input type="number" name="ankle" id="ankle" required>
+                
+                    <label for="biceps">Biceps (extended) circumference (cm)</label>
+                    <input type="number" name="biceps" id="biceps" required>
+                
+                    <label for="forearm">Forearm circumference (cm)</label>
+                    <input type="number" name="forearm" id="forearm" required>
+                
+                    <label for="wrist">Wrist circumference (cm)</label>
+                    <input type="number" name="wrist" id="wrist" required>
+                
+                    <input type="submit" value="Predict">
+                </form>
+            </div>
+        <% } %>
+    </div>
+    <footer class="<%= locals.prediction ? 'fixed-footer' : 'normal-footer' %>">
+        <p>&copy; 2023 Manthena Dileep Sai. All rights reserved. | Contact: dileepsaimanthena4930@gmail.com | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a> | Acknowledgments</p>
+    </footer>
+</body>
+</html>

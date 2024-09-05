@@ -1,0 +1,62 @@
+form{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    
+}
+form input{
+    width:100px;
+    height: 30px;
+    border: 2px solid black;
+}
+.formdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: max-content;
+    gap: 30px;
+    background-color:whitesmoke;
+    margin: auto;
+    padding: 30px 20px 30px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+.formdiv button{
+    height: 40px;
+    width:100px;
+    color: white;
+    background-color:black;
+    font-size:20px;
+    border: none;
+    cursor: pointer;
+}
+.normal-footer{
+    background-color:black;
+    color:white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 50px;
+}
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:black;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
+}
+.predictiondiv p{
+    font-size: 60px;
+}
