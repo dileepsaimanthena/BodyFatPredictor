@@ -1,18 +1,15 @@
-# Use Node.js base image
-FROM node:16
+# Use Python base image with Node.js installed
+FROM python:3.9-slim
 
-# Install Python 3.12 and pip, along with necessary build tools
-RUN apt-get update && apt-get install -y \
-    python3.12 \
-    python3.12-dev \
-    python3.12-distutils \
-    python3-pip \
-    build-essential \
-    gfortran \
-    libatlas-base-dev
+# Install Node.js and necessary packages
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs build-essential gfortran libatlas-base-dev && \
+    rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip to the latest version to ensure compatibility
-RUN python3.12 -m pip install --upgrade pip
+# Upgrade pip to the latest version
+RUN python3 -m pip install --upgrade pip
 
 # Set working directory and copy package files
 WORKDIR /usr/src/app
@@ -23,7 +20,7 @@ RUN npm install
 
 # Copy requirements file and install Python dependencies
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy the rest of the application files
 COPY . .
