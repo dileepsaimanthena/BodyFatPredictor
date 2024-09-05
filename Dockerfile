@@ -1,8 +1,12 @@
-# Use Node.js base image
 FROM node:16
 
-# Install Python 3 and pip
-RUN apt-get update && apt-get install -y python3 python3-pip
+# Install Python 3, pip, and necessary build tools
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    build-essential \
+    gfortran \
+    libatlas-base-dev
 
 # Set working directory and copy app files
 WORKDIR /usr/src/app
