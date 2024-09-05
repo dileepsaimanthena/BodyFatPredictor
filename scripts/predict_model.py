@@ -2,7 +2,8 @@ import sys
 import joblib
 import numpy as np
 import os
-model_filename = r'C:\Users\darli\Downloads\Bodyfat project\Bodyfat project\models\body_fat_predictor.pkl'
+base_dir = os.path.dirname(os.path.abspath(__file__))
+model_filename = os.path.join(base_dir, '../models/body_fat_predictor.pkl')
 model_and_scaler = joblib.load(model_filename)
 model = model_and_scaler['model']
 scaler = model_and_scaler['scaler']

@@ -6,9 +6,12 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 import os
 
-# Set paths for CSV and model
-csv_file_path = r'C:\Users\darli\Downloads\Bodyfat project\Bodyfat project\public\bodyfat.csv'
-model_save_path = r'C:\Users\darli\Downloads\Bodyfat project\Bodyfat project\models\body_fat_predictor.pkl'
+# Get the current directory of this script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Set relative paths for CSV and model
+csv_file_path = os.path.join(base_dir, '../public/bodyfat.csv')
+model_save_path = os.path.join(base_dir, '../models/body_fat_predictor.pkl')
 
 # Load the dataset
 data = pd.read_csv(csv_file_path)
