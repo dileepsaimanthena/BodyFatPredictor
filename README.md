@@ -20,26 +20,30 @@
 
 To set up the project locally, follow these steps:
 
-1. **Clone the Repository:**
+**Clone the Repository:**
 
    ```bash
    git clone https://github.com/dileepsaimanthena/BodyFatPredictor.git
    cd BodyFatPredictor
-Install Node.js Dependencies:
-
+```
+### Install Node.js Dependencies:
+```bash
 npm install
-Set Up Python Environment (if required):
+```
+### Set Up Python Environment (if required):
 
 Create a virtual environment and install the necessary Python packages:
 
 python -m venv .venv
-source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
-## Installation
+source .venv/bin/activate  
+### On Windows use 
+`.venv\Scripts\activate`
+### Installation
 
   ```bash
   pip install -r requirements.txt
 ```
-## Run the Application:
+### Run the Application:
 
 Start the Node.js server:
 ```bash
@@ -47,7 +51,7 @@ npm start
 ```
 The application should now be running at http://localhost:3000.
 
-## Usage
+### Usage
 Open the application in your web browser.
 Enter the required physical measurements into the form.
 Click the "Predict" button to get the estimated body fat percentage.
